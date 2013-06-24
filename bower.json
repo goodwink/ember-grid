@@ -1,0 +1,10 @@
+{
+  "name": "ember-grid",
+  "version": "0.1.0",
+  "main": "src/ember-grid.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
