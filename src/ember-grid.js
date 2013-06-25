@@ -64,7 +64,7 @@ GRID.PaginatedMixin = Ember.Mixin.create({
 
 });
 
-GRID.TableController = Ember.ArrayProxy.extend(Ember.ControllerMixin, Ember.SortableMixin, GRID.QueryMixin, GRID.PaginatedMixin, {
+GRID.TableController = Ember.ArrayController.extend(GRID.QueryMixin, GRID.PaginatedMixin, {
 
     columns: [],
 
@@ -244,7 +244,7 @@ GRID.FooterView = Ember.View.extend({
 })
 
 GRID.PageListView = Ember.ContainerView.extend({
-    
+
     tagName: 'ul',
 
     firstPageView: Ember.View.extend({
@@ -313,7 +313,7 @@ GRID.PageListView = Ember.ContainerView.extend({
         var pagesFrom = Math.max(0, page - this.visiblePages);
         var pagesTo = Math.min(pages, page + this.visiblePages + 1);
         var limit = this.get('controller.limit');
-        
+
         var pages = [];
         for (var i = pagesFrom; i < pagesTo; i++) {
             pages.push({
